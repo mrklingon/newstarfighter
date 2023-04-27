@@ -1,7 +1,7 @@
 function shoSky (crn: number) {
     for (let index = 0; index <= 4; index++) {
         for (let index2 = 0; index2 <= 4; index2++) {
-            led.plotBrightness(index2, index, 12 * cosmos[crn + (index2 + 100 * index)])
+            led.plotBrightness(index2, index, 12 * cosmos[crn + (index2 + 50 * index)])
         }
     }
 }
@@ -26,8 +26,8 @@ let d = 0
 let dir2 = 0
 let cosmos: number[] = []
 let alt = 2
-for (let index = 0; index < 5 * 100; index++) {
-    if (40 < randint(0, 100)) {
+for (let index = 0; index < 5 * 50; index++) {
+    if (40 < randint(0, 50)) {
         cosmos.push(randint(2, 6))
     } else {
         cosmos.push(0)
