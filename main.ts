@@ -1,3 +1,8 @@
+input.onButtonPressed(Button.A, function () {
+    led.plot(0, alt)
+    led.plot(1, alt)
+    basic.pause(100)
+})
 function shoSky (crn: number) {
     for (let index = 0; index <= 4; index++) {
         for (let index2 = 0; index2 <= 4; index2++) {
@@ -22,10 +27,16 @@ function findDir () {
     }
     return dir2
 }
+input.onButtonPressed(Button.B, function () {
+    led.plot(3, alt)
+    led.plot(4, alt)
+    basic.pause(100)
+})
 let d = 0
 let dir2 = 0
 let cosmos: number[] = []
-let alt = 2
+let alt = 0
+alt = 2
 for (let index = 0; index < 5 * 50; index++) {
     if (40 < randint(0, 50)) {
         cosmos.push(randint(2, 6))
