@@ -1,5 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     led.plot(0, alt)
+    basic.pause(100)
     led.plot(1, alt)
     basic.pause(100)
 })
@@ -29,6 +30,7 @@ function findDir () {
 }
 input.onButtonPressed(Button.B, function () {
     led.plot(3, alt)
+    basic.pause(100)
     led.plot(4, alt)
     basic.pause(100)
 })
