@@ -1,4 +1,7 @@
 input.onButtonPressed(Button.A, function () {
+    if (0 != led.pointBrightness(0, alt) || 0 != led.pointBrightness(1, alt)) {
+        game.addScore(randint(3, 10))
+    }
     led.plot(0, alt)
     basic.pause(100)
     led.plot(1, alt)
@@ -29,6 +32,9 @@ function findDir () {
     return dir2
 }
 input.onButtonPressed(Button.B, function () {
+    if (0 != led.pointBrightness(3, alt) || 0 != led.pointBrightness(4, alt)) {
+        game.addScore(randint(3, 10))
+    }
     led.plot(3, alt)
     basic.pause(100)
     led.plot(4, alt)
@@ -38,6 +44,7 @@ let d = 0
 let dir2 = 0
 let cosmos: number[] = []
 let alt = 0
+game.setLife(5)
 alt = 2
 for (let index = 0; index < 5 * 50; index++) {
     if (40 < randint(0, 50)) {
@@ -49,6 +56,9 @@ for (let index = 0; index < 5 * 50; index++) {
 let corner = 0
 let speed = 0
 basic.forever(function () {
+    if (40 < led.pointBrightness(2, alt)) {
+        game.removeLife(1)
+    }
     led.plot(2, alt)
     basic.pause(100)
     led.unplot(2, alt)
